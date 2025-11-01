@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>God of War 4 - GameVerse</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+   body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: radial-gradient(circle at top, #101010 0%, #050505 80%);
+      color: #e0e0e0;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(90deg, #111, #1c1c1c);
+      padding: 18px 50px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+      border-bottom: 1px solid #00d4ff33;
+    }
+
+    .navbar .logo {
+      font-size: 26px;
+      font-weight: bold;
+      color: #00d4ff;
+      text-shadow: 0 0 10px #00d4ff;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      color: #ccc;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #00d4ff;
+    }
+
+    /* Main Container */
+    .game-detail {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 30px;
+      background: rgba(20, 20, 20, 0.8);
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(0, 212, 255, 0.05);
+    }
+
+    /* Trailer and About */
+    .trailer-about {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    iframe {
+      flex: 1 1 550px;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+    }
+
+    .about-text {
+      flex: 1 1 400px;
+      font-size: 18px;
+    }
+
+    .about-text h2 {
+      color: #00d4ff;
+      text-shadow: 0 0 10px #00d4ff77;
+    }
+
+    /* Ratings */
+    .ratings {
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .rating-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #1a1a1a;
+      padding: 8px 14px;
+      border-radius: 8px;
+      box-shadow: inset 0 0 5px #00d4ff33;
+    }
+
+    .rating-icon {
+      width: 35px;
+      height: 35px;
+      object-fit: contain;
+    }
+
+    .score {
+      font-size: 20px;
+      color: #ffcc00;
+      font-weight: bold;
+    }
+
+    /* Purchase Button */
+    .game-purchase {
+      margin-top: 25px;
+    }
+
+    .cta-btn {
+      background: linear-gradient(90deg, #00d4ff, #0077ff);
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+      box-shadow: 0 0 10px #00d4ff80;
+    }
+
+    .cta-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #00d4ff;
+    }
+
+    /* Images + Requirements Section */
+    .image-requirements {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-top: 60px;
+    }
+
+    .image-gallery {
+      flex: 1 1 550px;
+    }
+
+    .image-gallery img {
+      margin: 6px;
+      border-radius: 10px;
+      width: 230px;
+      height: 135px;
+      object-fit: cover;
+      transition: 0.3s;
+      box-shadow: 0 0 8px #00d4ff33;
+    }
+
+    .image-gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #00d4ff77;
+    }
+
+    /* Pros and Cons */
+    .pros-cons {
+      margin-top: 30px;
+      background: #141414;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: inset 0 0 10px #00d4ff22;
+    }
+
+    .pros h3 {
+      color: #00ff88;
+    }
+
+    .cons h3 {
+      color: #ff5555;
+    }
+
+    .pros-cons ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .pros-cons li {
+      background-color: #1f1f1f;
+      margin: 6px 0;
+      padding: 8px 10px;
+      border-radius: 6px;
+    }
+
+    /* Requirements Table */
+    .requirements-section {
+      flex: 1 1 400px;
+      background-color: #111;
+      padding: 20px;
+      border-radius: 10px;
+      line-height: 1.8;
+      box-shadow: 0 0 20px rgba(0, 212, 255, 0.1);
+    }
+
+    .requirements-section h2 {
+      color: #00d4ff;
+      text-shadow: 0 0 10px #00d4ff66;
+    }
+
+    .requirements-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    .requirements-section th,
+    .requirements-section td {
+      border: 1px solid #222;
+      padding: 10px;
+      text-align: left;
+      background-color: #1a1a1a;
+    }
+
+    .requirements-section th {
+      background-color: #222;
+      color: #00d4ff;
+    }
+
+    /* Related & Similar Games */
+    .related-games, .similar-games {
+      margin-top: 50px;
+    }
+
+    .related-games h2, .similar-games h2 {
+      color: #00d4ff;
+      text-shadow: 0 0 10px #00d4ff77;
+      margin-bottom: 20px;
+    }
+
+    .game-card {
+      display: inline-block;
+      text-align: left;
+      background-color: #141414;
+      padding: 12px;
+      border-radius: 10px;
+      margin-right: 20px;
+      transition: 0.3s;
+      box-shadow: 0 0 15px #00d4ff22;
+    }
+
+    .game-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px #00d4ff66;
+    }
+
+    .game-card img {
+      border-radius: 10px;
+      width: 250px;
+      height: 400px;
+      object-fit: cover;
+    }
+
+    footer {
+      background: linear-gradient(90deg, #111, #1a1a1a);
+      text-align: center;
+      padding: 15px;
+      margin-top: 60px;
+      border-top: 1px solid #00d4ff33;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div>
+      <a href="fgamepage.html" class="logo">PlayPortal</a>
+    </div>
+  </header>
+
+  <main class="game-detail">
+    <section class="trailer-about">
+      <iframe width="800" height="450"
+        src= "https://www.youtube.com/embed/NN-9SQXoi50"
+        title="Cup Head Trailer"
+        frameborder="0"
+        allowfullscreen>
+      </iframe>
+      <div class="about-text">
+        <h2>About CupHead</h2>
+        <p>
+         Cuphead is a 2017 indie run-and-gun game by Studio MDHR. It follows Cuphead and his brother Mugman, who must repay a debt to the Devil by collecting the souls of runaway debtors. The game features challenging levels and boss fights for one or two players, with a flexible narrative. As players progress, they unlock new powers and abilities, though only a few can be equipped at once.
+
+        </p>
+
+        <div class="ratings">
+          <div class="rating-item">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Metacritic.svg" alt="Metacritic" class="rating-icon">
+            <span class="score">90/100</span>
+          </div>
+          <div class="rating-item">
+            <img src="https://play-lh.googleusercontent.com/FC_ggvbL8insMTt6KaoYBDDgYDgoo61DIP-5iUVhCWqwl2V5vj_T7MA7Q1HoCBPzeWw=w480-h960-rw" alt="IGN" class="rating-icon">
+            <span class="score">9.4/10</span>
+          </div>
+          <span class="platform">(PC)</span>
+        </div>
+
+        <div class="game-purchase">
+          <span class="price">$29.98</span>
+          <a href="https://store.steampowered.com/app/268910/Cuphead/" class="cta-btn">Buy Now</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="image-requirements">
+      <div class="image-gallery">
+        <h2>Images</h2>
+        <img src="https://i.guim.co.uk/img/media/73c6a7fc29b161a8da02247caaff1b032ee1262a/135_0_1617_971/master/1617.jpg?width=1200&quality=85&auto=format&fit=max&s=cc5a97b24993d6ac9ec64db01d67266f" alt="cuphead Image 1">
+        <img src="https://images.dwncdn.net/images/t_app-cover-m,f_auto/p/d30ffe1a-3b74-441a-8c55-ba6d9c03d0c1/2049988301/cuphead-the-delicious-last-course-screenshot "alt="Cuphead Image 2">
+        <img src="https://cdn.dlcompare.com/others_jpg/upload/news/image/cuphead-fans-cant-stop-playing-the-delicuous-last-course-image-6679ef88.jpeg.webp" alt="Silksong Image 3">
+        <img src="https://knowtechie.com/wp-content/uploads/2017/10/cuphead.jpg" alt="Cuphead Image 4">
+        <div class="pros-cons">
+          <div class="pros">
+            <h3>✅ Pros</h3>
+            <ul>
+              <li>Strong Storytelling & Emotional Depth</li>
+              <li>Beautiful Graphics & World Design</li>
+              <li>Smooth Combat System</li>
+            </ul>
+          </div>
+          <div class="cons">
+            <h3>❌ Cons</h3>
+            <ul>
+              <li>Extreme Difficulty</li>
+              <li>Slow Pacing at Times</li>
+              <li>Linear Exploration</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="requirements-section">
+        <h2>Cuphead Requirements</h2>
+        <table>
+  <thead>
+    <tr>
+      <th>Component</th>
+      <th>Minimum</th>
+      <th>Recommended</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>CPU</td>
+      <td>Intel i5-2500k (4 core 3.3 GHz) or AMD Ryzen 3 1200 (4 core 3.1 GHz)</td>
+      <td>Intel i5-6600k (4 core 3.5 GHz) or AMD Ryzen 5 2400 G (4 core 3.6 GHz)</td>
+    </tr>
+    <tr>
+      <td>RAM</td>
+      <td>8 GB</td>
+      <td>8 GB</td>
+    </tr>
+    <tr>
+      <td>Video Card</td>
+      <td>NVIDIA GTX 960 (4 GB) or AMD R9 290X (4 GB)</td>
+      <td>NVIDIA GTX 1060 (6 GB) or AMD RX 570 (4 GB)</td>
+    </tr>
+    <tr>
+      <td>Dedicated Video RAM</td>
+      <td>4 GB</td>
+      <td>6 GB (AMD 4 GB)</td>
+    </tr>
+    <tr>
+      <td>Pixel Shader</td>
+      <td>5.1</td>
+      <td>5.1</td>
+    </tr>
+    <tr>
+      <td>Vertex Shader</td>
+      <td>5.1</td>
+      <td>5.1</td>
+    </tr>
+    <tr>
+      <td>OS</td>
+      <td>Windows 10 64-bit</td>
+      <td>Windows 10 64-bit</td>
+    </tr>
+    <tr>
+      <td>Free Disk Space</td>
+      <td>70 GB</td>
+      <td>70 GB</td>
+    </tr>
+  </tbody>
+</table>
+
+      </div>
+    </section>
+
+    <!-- Related Games Section -->
+    <section class="related-games">
+      <h2>Other Related Games</h2>
+      <div class="game-card">
+        <a href="game6.html" target="_blank">
+          <img src="https://tse3.mm.bing.net/th/id/OIP.SgsnJ0C3QZIYeLjyIzt08QAAAA?r=0&cb=thfc1&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Related Game"> 
+        </a>
+        <h3 class="blue-title">Hollow Knight Silksong</h3>
+      </div>
+    </section>
+
+    <!-- Similar Games Section -->
+    <section class="similar-games">
+      <h2>Similar Games</h2>
+      <div class="game-card">
+        <a href="game8.html" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/en/a/aa/SuperMeatBoy_cover.pn" alt="Similar Game">
+        </a>
+        <h3 class="blue-title">Cup Head</h3>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 PlayPortal. All Rights Reserved.</p>
+  </footer>
+<script>
+  const trustedDomains = [
+    "steampowered.com",
+    "epicgames.com",
+    "gog.com",
+    "xbox.com",
+    "playstation.com",
+    "nintendo.com",
+    "ea.com",
+    "ubisoft.com",
+    "rockstargames.com",
+    "wikipedia.org"
+  ];
+
+  function isSafeLink(url) {
+    try {
+      const parsed = new URL(url);
+      return trustedDomains.some(domain => parsed.hostname.endsWith(domain));
+    } catch {
+      return false;
+    }
+  }
+
+  // Create Unsafe Link Popup
+  const popup = document.createElement("div");
+  popup.id = "external-link-popup";
+  popup.style.position = "fixed";
+  popup.style.top = "0";
+  popup.style.left = "0";
+  popup.style.width = "100%";
+  popup.style.height = "100%";
+  popup.style.background = "rgba(0,0,0,0.85)";
+  popup.style.display = "flex";
+  popup.style.flexDirection = "column";
+  popup.style.justifyContent = "center";
+  popup.style.alignItems = "center";
+  popup.style.color = "#f0f0f0";
+  popup.style.fontFamily = "Arial, sans-serif";
+  popup.style.fontSize = "18px";
+  popup.style.textAlign = "center";
+  popup.style.padding = "20px";
+  popup.style.zIndex = "9999";
+  popup.style.border = "2px solid #00ff88";
+  popup.style.borderRadius = "10px";
+  popup.style.display = "none"; // hidden initially
+  popup.innerHTML = `
+    <p>⚠️ You are about to leave PlayPortal and open an external link.</p>
+    <p> This link has been flagged as unsafe. It is recommended not to open this link.</p>
+    <p>Do you trust this website?</p>
+    <div style="margin-top:20px;">
+      <button id="popup-continue" style="margin-right:10px;padding:8px 15px;background:#00ff88;border:none;border-radius:5px;color:#000;cursor:pointer;">Continue</button>
+      <button id="popup-cancel" style="padding:8px 15px;background:#ff5555;border:none;border-radius:5px;color:#fff;cursor:pointer;">Cancel</button>
+    </div>
+  `;
+  document.body.appendChild(popup);
+
+  let targetHref = "";
+
+  function processLinks() {
+    const links = document.querySelectorAll("a[href]");
+
+    links.forEach(link => {
+      const href = link.getAttribute("href");
+      if (!href || !href.startsWith("http")) return;
+
+      let badge = document.createElement("span");
+      badge.style.marginLeft = "6px";
+
+      if (isSafeLink(href)) {
+        // Verified link
+        badge.textContent = "✅ Verified";
+        badge.classList.add("verified-badge");
+        badge.style.color = "#00ff88";
+        link.setAttribute("target", "_blank");
+        badge.setAttribute("title", "Official site, safe to click");
+      } else {
+        // Unsafe link
+        badge.textContent = "❌ Unsafe";
+        badge.classList.add("unsafe-badge");
+        badge.style.color = "#ff5555";
+        badge.setAttribute("title", "This link is flagged as unsafe. Click will show a warning.");
+        link.classList.add("unsafe-link");
+
+        // Add click for popup
+        link.addEventListener("click", function(e) {
+          e.preventDefault();
+          targetHref = link.href;
+          popup.style.display = "flex";
+        });
+      }
+
+      link.insertAdjacentElement("afterend", badge);
+
+      // Add copy link button
+      const copyBtn = document.createElement("button");
+      copyBtn.textContent = "📋 Copy Link";
+      copyBtn.classList.add("copy-link-btn");
+      copyBtn.style.marginLeft = "6px";
+      copyBtn.style.padding = "2px 6px";
+      copyBtn.style.fontSize = "12px";
+      copyBtn.style.borderRadius = "4px";
+      copyBtn.style.border = "none";
+      copyBtn.style.cursor = "pointer";
+      copyBtn.style.background = badge.classList.contains("verified-badge") ? "#00ff88" : "#ff5555";
+      copyBtn.style.color = badge.classList.contains("verified-badge") ? "#000" : "#fff";
+
+      copyBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        navigator.clipboard.writeText(link.href)
+          .then(() => alert(`Link copied to clipboard:\n${link.href}`))
+          .catch(() => alert("Failed to copy link."));
+      });
+
+      badge.insertAdjacentElement("afterend", copyBtn);
+    });
+
+    // Console summary
+    const verifiedCount = document.querySelectorAll(".verified-badge").length;
+    const unsafeCount = document.querySelectorAll(".unsafe-badge").length;
+    console.log(`PlayPortal Link Summary: Verified links = ${verifiedCount}, Unsafe links = ${unsafeCount}`);
+  }
+
+  // Popup button actions
+  document.getElementById("popup-continue").addEventListener("click", () => {
+    window.open(targetHref, "_blank");
+    popup.style.display = "none";
+    targetHref = "";
+  });
+
+  document.getElementById("popup-cancel").addEventListener("click", () => {
+    popup.style.display = "none";
+    targetHref = "";
+  });
+
+  // Run after DOM ready
+  window.addEventListener("DOMContentLoaded", () => {
+    processLinks();
+  });
+</script>
+</body>
+</html>

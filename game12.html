@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ghost of Yeti - PlayPortal</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #0e0e0e;
+      color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #1f1f1f;
+      padding: 15px 40px;
+      border-bottom: 1px solid #00d4ff33;
+    }
+
+    .navbar .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #00d4ff;
+      text-shadow: 0 0 10px #00d4ff;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    /* Main Content */
+    .game-detail {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .trailer-about {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    .trailer-about iframe {
+      flex: 1 1 500px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #00d4ff33;
+    }
+
+    .about-text {
+      flex: 1 1 400px;
+      font-size: 18px;
+    }
+
+    .about-text h2 {
+      color: #00d4ff;
+      text-shadow: 0 0 10px #00d4ff77;
+    }
+
+    /* Ratings */
+    .ratings {
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .rating-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .rating-icon {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+    }
+
+    .score {
+      font-size: 20px;
+      color: #ffcc00;
+      font-weight: bold;
+    }
+
+    /* Purchase Button */
+    .game-purchase {
+      margin-top: 30px;
+    }
+
+    .cta-btn {
+      background-color: #00d4ff;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 0 10px #00d4ff88;
+      transition: 0.3s;
+    }
+
+    .cta-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #00d4ffcc;
+    }
+
+    /* Images & Requirements */
+    .image-requirements {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-top: 60px;
+    }
+
+    .image-gallery {
+      flex: 1 1 500px;
+    }
+
+    .image-gallery h2 {
+      color: #00d4ff;
+      text-shadow: 0 0 10px #00d4ff77;
+      margin-bottom: 10px;
+    }
+
+    .image-gallery img {
+      margin: 5px;
+      border-radius: 10px;
+      width: 220px;
+      height: 130px;
+      object-fit: cover;
+      transition: 0.3s;
+      box-shadow: 0 0 8px #00d4ff33;
+    }
+
+    .image-gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #00d4ff88;
+    }
+
+    /* Pros / Cons */
+    .pros-cons {
+      margin-top: 30px;
+      background-color: #1f1f1f;
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    .pros h3 {
+      color: #00ff88;
+    }
+
+    .cons h3 {
+      color: #ff5555;
+    }
+
+    .pros-cons ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .pros-cons li {
+      background-color: #2a2a2a;
+      margin: 6px 0;
+      padding: 8px 10px;
+      border-radius: 5px;
+    }
+
+    /* System Requirements */
+    .requirements-section {
+      flex: 1 1 400px;
+      background-color: #1f1f1f;
+      padding: 20px;
+      border-radius: 10px;
+      line-height: 1.8;
+    }
+
+    .requirements-section h2 {
+      color: #00d4ff;
+      text-shadow: 0 0 10px #00d4ff77;
+      margin-bottom: 10px;
+    }
+
+    .requirements-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    .requirements-section th,
+    .requirements-section td {
+      border: 1px solid #2a2a2a;
+      padding: 8px 10px;
+      background-color: #2a2a2a;
+      border-radius: 5px;
+    }
+
+    .requirements-section th {
+      background-color: #333;
+      color: #00d4ff;
+    }
+
+    /* Related / Similar Games */
+    .related-games, .similar-games {
+      margin-top: 50px;
+    }
+
+    .related-games h2, .similar-games h2 {
+      color: #00d4ff;
+      text-shadow: 0 0 10px #00d4ff77;
+      margin-bottom: 20px;
+    }
+
+    .game-card {
+      display: inline-block;
+      text-align: left;
+      background-color: #1f1f1f;
+      padding: 10px;
+      border-radius: 10px;
+      margin-right: 15px;
+      transition: 0.3s;
+      box-shadow: 0 0 15px #00d4ff22;
+    }
+
+    .game-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px #00d4ff66;
+    }
+
+    .game-card img {
+      border-radius: 10px;
+      width: 250px;
+      height: 400px;
+      object-fit: cover;
+    }
+
+    footer {
+      background-color: #1f1f1f;
+      text-align: center;
+      padding: 15px;
+      margin-top: 50px;
+      border-top: 1px solid #00d4ff33;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo"><a href="fgamepage.html" style="color: inherit; text-decoration: none;">PlayPortal</a></div>
+  
+  </header>
+
+  <main class="game-detail">
+    <section class="trailer-about">
+      <iframe width="800" height="450" src="https://www.youtube.com/embed/H8V0t0o2Cr8" title="Ghost of Yeti Gameplay Trailer" allowfullscreen></iframe>
+      <div class="about-text">
+        <h2> Ghost of Yotei</h2>
+        <p>
+          Journey into the frozen peaks where myth meets legend. Ghost of Yeti combines stealth, combat, and an atmospheric world of survival and mystery.
+        </p>
+
+        <div class="ratings">
+          <div class="rating-item">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Metacritic.svg" alt="Metacritic" class="rating-icon">
+            <span class="score">TBA</span>
+          </div>
+          <div class="rating-item">
+            <img src="https://play-lh.googleusercontent.com/FC_ggvbL8insMTt6KaoYBDDgYDgoo61DIP-5iUVhCWqwl2V5vj_T7MA7Q1HoCBPzeWw=w480-h960-rw" alt="IGN" class="rating-icon">
+            <span class="score">TBA</span>
+          </div>
+        </div>
+
+        <div class="game-purchase">
+          <span class="price">$39.99</span>
+          <a href="#" class="cta-btn">Coming Soon</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="image-requirements">
+      <div class="image-gallery">
+        <h2>Images</h2>
+        <img src="https://sm.ign.com/t/ign_in/review/g/ghost-of-y/ghost-of-yotei-review_mdhx.2560.jpg" alt="Ghost of Yeti screenshot 1">
+        <img src="https://img.gurugamer.com/resize/1200x-/2025/10/04/ghost-of-yotei-how-to-skip-cutscenes-58cb.jpg" alt="Ghost of Yeti screenshot 2">
+        <img src="https://sm.ign.com/t/ign_pt/news/g/ghost-of-y/ghost-of-yotei-praised-in-japan-for-how-quintessentially-hok_7bxp.1200.jpg" alt="Ghost of Yeti screenshot 3">
+        <img src="https://gamecored.com/wp-content/uploads/2025/09/ghost-of-yotei-rev-001.jpg" alt="Ghost of Yeti screenshot 4">
+
+        <div class="pros-cons">
+          <div class="pros">
+            <h3>✅ Pros</h3>
+            <ul>
+              <li>Immersive Snowy Environment</li>
+              <li>Engaging Stealth Mechanics</li>
+              <li>Intense Combat Sequences</li>
+            </ul>
+          </div>
+          <div class="cons">
+            <h3>❌ Cons</h3>
+            <ul>
+              <li>Limited Story Depth</li>
+              <li>Occasional Performance Drops</li>
+              <li>Smaller Enemy Variety</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="requirements-section">
+        <h2>System Requirements</h2>
+        <table>
+          <tr><th>Component</th><th>Minimum</th><th>Recommended</th></tr>
+          <tr><td>CPU</td><td>Intel i5-7400 / AMD Ryzen 3 1200</td><td>Intel i7-9700K / AMD Ryzen 5 3600</td></tr>
+          <tr><td>RAM</td><td>8 GB</td><td>16 GB</td></tr>
+          <tr><td>Video Card</td><td>NVIDIA GTX 1060 / AMD RX 580</td><td>NVIDIA RTX 2060 / AMD RX 5700</td></tr>
+          <tr><td>VRAM</td><td>4 GB</td><td>6 GB</td></tr>
+          <tr><td>Pixel Shader</td><td>5.1</td><td>6.0</td></tr>
+          <tr><td>Vertex Shader</td><td>5.1</td><td>6.0</td></tr>
+          <tr><td>OS</td><td>Windows 10 64-bit</td><td>Windows 11 64-bit</td></tr>
+          <tr><td>Storage</td><td>50 GB</td><td>70 GB</td></tr>
+        </table>
+      </div>
+    </section>
+
+    <section class="related-games">
+      <h2>Other Related Games</h2>
+      <div class="game-card">
+        <a href="https://store.steampowered.com/app/2215430/Ghost_of_Tsushima_DIRECTORS_CUT/l" target="_blank">
+          <img src="data:image/jpeg;base64,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" alt="Related Game">
+        </a>
+        <h3>Ghost of Tsushima</h3>
+      </div>
+    </section>
+
+    <section class="similar-games">
+      <h2>Similar Games</h2>
+      <div class="game-card">
+        <a href="sekiro.html" target="_blank">
+          <img src="https://i.etsystatic.com/6824854/r/il/c7ee48/2187954184/il_570xN.2187954184_gwkz.jpg" alt="Similar Game">
+        </a>
+        <h3>Sekiro: Shadows Die Twice</h3>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 PlayPortal. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>

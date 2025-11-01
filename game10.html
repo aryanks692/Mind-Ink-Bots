@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GTA 6 — Buy, watch trailer and view screenshots on GameVerse.">
+  <title>GTA 6 - GameVerse</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: radial-gradient(circle at top, #101010 0%, #050505 80%);
+      color: #e0e0e0;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(90deg, #111, #1c1c1c);
+      padding: 18px 50px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+      border-bottom: 1px solid #00d4ff33;
+    }
+
+    .navbar .logo {
+      font-size: 26px;
+      font-weight: bold;
+      color: #00d4ff;
+      text-shadow: 0 0 10px #00d4ff;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      color: #ccc;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #00d4ff;
+    }
+
+    /* Main Content */
+    .game-detail {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 30px;
+      background: rgba(20, 20, 20, 0.8);
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(0, 212, 255, 0.05);
+    }
+
+    /* Trailer & About */
+    .trailer-about {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    iframe {
+      flex: 1 1 550px;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+    }
+
+    .about-text {
+      flex: 1 1 400px;
+      font-size: 18px;
+    }
+
+    h1, h2 {
+      color: #00d4ff;
+      text-shadow: 0 0 10px #00d4ff77;
+    }
+
+    /* Ratings */
+    .ratings {
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .rating-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #1a1a1a;
+      padding: 8px 14px;
+      border-radius: 8px;
+      box-shadow: inset 0 0 5px #00d4ff33;
+    }
+
+    .rating-icon {
+      width: 35px;
+      height: 35px;
+      object-fit: contain;
+    }
+
+    .score {
+      font-size: 20px;
+      color: #ffcc00;
+      font-weight: bold;
+    }
+
+    /* Buy Button */
+    .game-purchase {
+      margin-top: 25px;
+    }
+
+    .cta-btn {
+      background: linear-gradient(90deg, #00d4ff, #0077ff);
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+      box-shadow: 0 0 10px #00d4ff80;
+    }
+
+    .cta-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #00d4ff;
+    }
+
+    /* Image Gallery + Requirements */
+    .image-requirements {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-top: 60px;
+    }
+
+    .image-gallery {
+      flex: 1 1 550px;
+    }
+
+    .image-gallery h2 {
+      color: #00d4ff;
+      text-shadow: 0 0 10px #00d4ff77;
+      margin-bottom: 10px;
+    }
+
+    .image-gallery img {
+      margin: 6px;
+      border-radius: 10px;
+      width: 230px;
+      height: 135px;
+      object-fit: cover;
+      transition: 0.3s;
+      box-shadow: 0 0 8px #00d4ff33;
+    }
+
+    .image-gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px #00d4ff88;
+    }
+
+    /* Pros and Cons */
+    .pros-cons {
+      margin-top: 30px;
+      background: #141414;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: inset 0 0 10px #00d4ff22;
+    }
+
+    .pros h3 { color: #00ff88; }
+    .cons h3 { color: #ff5555; }
+
+    .pros-cons ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .pros-cons li {
+      background-color: #1f1f1f;
+      margin: 6px 0;
+      padding: 8px 10px;
+      border-radius: 6px;
+    }
+
+    /* Requirements Table */
+    .requirements-section {
+      flex: 1 1 400px;
+      background-color: #111;
+      padding: 20px;
+      border-radius: 10px;
+      line-height: 1.8;
+      box-shadow: 0 0 20px rgba(0, 212, 255, 0.1);
+    }
+
+    .requirements-section h2 {
+      color: #00d4ff;
+      text-shadow: 0 0 10px #00d4ff66;
+    }
+
+    .requirements-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    .requirements-section th,
+    .requirements-section td {
+      border: 1px solid #222;
+      padding: 10px;
+      text-align: left;
+      background-color: #1a1a1a;
+    }
+
+    .requirements-section th {
+      background-color: #222;
+      color: #00d4ff;
+    }
+
+    /* Related and Similar Games */
+    .related-games, .similar-games {
+      margin-top: 50px;
+    }
+
+    .related-games h2, .similar-games h2 {
+      color: #00d4ff;
+      text-shadow: 0 0 10px #00d4ff77;
+      margin-bottom: 20px;
+    }
+
+    .game-card {
+      display: inline-block;
+      text-align: left;
+      background-color: #141414;
+      padding: 12px;
+      border-radius: 10px;
+      margin-right: 20px;
+      transition: 0.3s;
+      box-shadow: 0 0 15px #00d4ff22;
+    }
+
+    .game-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px #00d4ff66;
+    }
+
+    .game-card img {
+      border-radius: 10px;
+      width: 250px;
+      height: 400px;
+      object-fit: cover;
+    }
+
+    footer {
+      background: linear-gradient(90deg, #111, #1a1a1a);
+      text-align: center;
+      padding: 15px;
+      margin-top: 60px;
+      border-top: 1px solid #00d4ff33;
+      color: #888;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="logo"><a href="fgamepage.html" style="color: inherit; text-decoration: none;">PlayPortal</a></div>
+  </header>
+
+  <main class="game-detail">
+    <section class="trailer-about">
+      <iframe width="800" height="450"
+        src="https://www.youtube.com/embed/QdBZY2fkU-0"
+        title="GTA 6 Trailer"
+        allowfullscreen></iframe>
+
+      <div class="about-text">
+        <h1>Grand Theft Auto VI</h1>
+        <p>
+          Explore the sprawling open world of GTA 6 — a next-generation urban playground 
+          with evolving storylines, cinematic action, and deep gameplay systems.
+        </p>
+
+        <div class="ratings">
+          <div class="rating-item">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Metacritic.svg" class="rating-icon">
+            <span class="score">—/100</span>
+          </div>
+        </div>
+
+        <div class="game-purchase">
+          <span class="price">$59.99</span>
+          <a href="#" class="cta-btn">Coming Soon</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="image-requirements">
+      <div class="image-gallery">
+        <h2>Gallery</h2>
+         <img src="https://images.ladbible.com/resize?type=jpeg&quality=70&width=1200&fit=contain&gravity=auto&url=https://images.ladbiblegroup.com/v3/assets/bltbc1876152fcd9f07/bltc5baedb10131d8a1/6537a81472ff9e71e11d4562/six.jpg" width="200" height="200" alt="GTA 6 screenshot 1">
+        <img src="https://wp-pa.phonandroid.com/uploads/2023/12/Capture-decran-2023-12-05-074226.jpg" width="200" height="200" alt="GTA 6 screenshot 2">
+        <img src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/wm/2025/05/gta-6-delay-featured.jpg" width="200" height="200" alt="GTA 6 screenshot 3">
+        <img src="https://s.yimg.com/ny/api/res/1.2/HUH7AsiAvQ4FxN46GEiuKw--/YXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtoPTU0MA--/https://media.zenfs.com/en/gamesradar_237/9b7ab193ad717f346ef33ab7d4b0d7ad" width="200" height="200" alt="GTA 6 screenshot 4">
+        <div class="pros-cons">
+          <div class="pros">
+            <h3>✅ Pros</h3>
+            <ul>
+              <li>Expansive open world</li>
+              <li>Next-gen graphics</li>
+              <li>Deep gameplay systems</li>
+            </ul>
+          </div>
+          <div class="cons">
+            <h3>❌ Cons</h3>
+            <ul>
+              <li>System requirements TBA</li>
+              <li>Multiplayer details TBA</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="requirements-section">
+        <h2>System Requirements</h2>
+        <p>Official system requirements will be announced closer to release.</p>
+      </div>
+    </section>
+
+    <section class="related-games">
+      <h2>Other Related Games</h2>
+      <div class="game-card">
+        <a href="game2.html"><img src="https://image.api.playstation.com/vulcan/ap/rnd/202101/2019/JdvqcPlTYMxXrA1QQJm6TbDX.png" alt="GTA V"></a>
+        <h3>GTA V</h3>
+      </div>
+    </section>
+
+    <section class="similar-games">
+      <h2>Similar Games</h2>
+      <div class="game-card">
+        <a href="https://store.steampowered.com/app/742420/Saints_Row/"><img src="https://m.media-amazon.com/images/M/MV5BNzU2NmY2NzItY2ZhMi00MDk2LWE5MWEtYTg4NDFjMmMxOGQxXkEyXkFqcGc@._V1_.jpg" alt="Saints Row"></a>
+        <h3>Saints Row</h3>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 PlayPortal. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
+
+
+  
+
+

@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hollow Knight SilkSong</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: radial-gradient(circle at top, #101010 0%, #050505 80%);
+      color: #e0e0e0;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(90deg, #111, #1c1c1c);
+      padding: 18px 50px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+      border-bottom: 1px solid #00d4ff33;
+    }
+
+    .navbar .logo {
+      font-size: 26px;
+      font-weight: bold;
+      color: #00d4ff;
+      text-shadow: 0 0 10px #00d4ff;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      color: #ccc;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #00d4ff;
+    }
+
+    /* Main Container */
+    .game-detail {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 30px;
+      background: rgba(20, 20, 20, 0.8);
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(0, 212, 255, 0.05);
+    }
+
+    /* Trailer and About */
+    .trailer-about {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    iframe {
+      flex: 1 1 550px;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+    }
+
+    .about-text {
+      flex: 1 1 400px;
+      font-size: 18px;
+    }
+
+    .about-text h2 {
+      color: #00d4ff;
+      text-shadow: 0 0 10px #00d4ff77;
+    }
+
+    /* Ratings */
+    .ratings {
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .rating-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #1a1a1a;
+      padding: 8px 14px;
+      border-radius: 8px;
+      box-shadow: inset 0 0 5px #00d4ff33;
+    }
+
+    .rating-icon {
+      width: 35px;
+      height: 35px;
+      object-fit: contain;
+    }
+
+    .score {
+      font-size: 20px;
+      color: #ffcc00;
+      font-weight: bold;
+    }
+
+    /* Purchase Button */
+    .game-purchase {
+      margin-top: 25px;
+    }
+
+    .cta-btn {
+      background: linear-gradient(90deg, #00d4ff, #0077ff);
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+      box-shadow: 0 0 10px #00d4ff80;
+    }
+
+    .cta-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #00d4ff;
+    }
+
+    /* Images + Requirements Section */
+    .image-requirements {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-top: 60px;
+    }
+
+    .image-gallery {
+      flex: 1 1 550px;
+    }
+
+    .image-gallery img {
+      margin: 6px;
+      border-radius: 10px;
+      width: 230px;
+      height: 135px;
+      object-fit: cover;
+      transition: 0.3s;
+      box-shadow: 0 0 8px #00d4ff33;
+    }
+
+    .image-gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #00d4ff77;
+    }
+
+    /* Pros and Cons */
+    .pros-cons {
+      margin-top: 30px;
+      background: #141414;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: inset 0 0 10px #00d4ff22;
+    }
+
+    .pros h3 {
+      color: #00ff88;
+    }
+
+    .cons h3 {
+      color: #ff5555;
+    }
+
+    .pros-cons ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .pros-cons li {
+      background-color: #1f1f1f;
+      margin: 6px 0;
+      padding: 8px 10px;
+      border-radius: 6px;
+    }
+
+    /* Requirements Table */
+    .requirements-section {
+      flex: 1 1 400px;
+      background-color: #111;
+      padding: 20px;
+      border-radius: 10px;
+      line-height: 1.8;
+      box-shadow: 0 0 20px rgba(0, 212, 255, 0.1);
+    }
+
+    .requirements-section h2 {
+      color: #00d4ff;
+      text-shadow: 0 0 10px #00d4ff66;
+    }
+
+    .requirements-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    .requirements-section th,
+    .requirements-section td {
+      border: 1px solid #222;
+      padding: 10px;
+      text-align: left;
+      background-color: #1a1a1a;
+    }
+
+    .requirements-section th {
+      background-color: #222;
+      color: #00d4ff;
+    }
+
+    /* Related & Similar Games */
+    .related-games, .similar-games {
+      margin-top: 50px;
+    }
+
+    .related-games h2, .similar-games h2 {
+      color: #00d4ff;
+      text-shadow: 0 0 10px #00d4ff77;
+      margin-bottom: 20px;
+    }
+
+    .game-card {
+      display: inline-block;
+      text-align: left;
+      background-color: #141414;
+      padding: 12px;
+      border-radius: 10px;
+      margin-right: 20px;
+      transition: 0.3s;
+      box-shadow: 0 0 15px #00d4ff22;
+    }
+
+    .game-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px #00d4ff66;
+    }
+
+    .game-card img {
+      border-radius: 10px;
+      width: 250px;
+      height: 400px;
+      object-fit: cover;
+    }
+
+    footer {
+      background: linear-gradient(90deg, #111, #1a1a1a);
+      text-align: center;
+      padding: 15px;
+      margin-top: 60px;
+      border-top: 1px solid #00d4ff33;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div>
+      <a href="fgamepage.html" class="logo">PlayPortal</a>
+    </div>
+  </header>
+
+  <main class="game-detail">
+    <section class="trailer-about">
+      <iframe width="800" height="450"
+        src="https://www.youtube.com/embed/pFAknD_9U7c"
+        title="Hollow Knight Silksong Trailer"
+        frameborder="0"
+        allowfullscreen>
+      </iframe>
+      <div class="about-text">
+        <h2>About Hollow Knight SilkSong</h2>
+        <p>
+          Play as Hornet, princess-protector of Hallownest, as you journey through a vast new kingdom.
+        </p>
+
+        <div class="ratings">
+          <div class="rating-item">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Metacritic.svg" alt="Metacritic" class="rating-icon">
+            <span class="score">90/100</span>
+          </div>
+          <div class="rating-item">
+            <img src="https://play-lh.googleusercontent.com/FC_ggvbL8insMTt6KaoYBDDgYDgoo61DIP-5iUVhCWqwl2V5vj_T7MA7Q1HoCBPzeWw=w480-h960-rw" alt="IGN" class="rating-icon">
+            <span class="score">9.4/10</span>
+          </div>
+          <span class="platform">(PC)</span>
+        </div>
+
+        <div class="game-purchase">
+          <span class="price">$29.98</span>
+          <a href="https://store.steampowered.com/app/1030300/Hollow_Knight_Silksong/" class="cta-btn">Buy Now</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="image-requirements">
+      <div class="image-gallery">
+        <h2>Images</h2>
+        <img src="https://preview.redd.it/new-silksong-screenshots-via-nintendo-japan-v0-bmh3c2qcnfte1.jpg?width=640&crop=smart&auto=webp&s=651ea3d9633102568450a03a98b2b80dc2078c90" alt="Silksong Image 1">
+        <img src="data:image/jpeg;base64,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" alt="Silksong Image 2">
+        <img src="https://cdn.mos.cms.futurecdn.net/8iKiEgFUf7fhvoApnwGUCW.jpg" alt="Silksong Image 3">
+        <img src="https://www.hindustantimes.com/ht-img/img/2025/08/21/550x309/Screenshot_2025-08-21_203009_1755789568725_1755789572283.png" alt="Silksong Image 4">
+
+        <div class="pros-cons">
+          <div class="pros">
+            <h3>✅ Pros</h3>
+            <ul>
+              <li>Strong Storytelling & Emotional Depth</li>
+              <li>Beautiful Graphics & World Design</li>
+              <li>Smooth Combat System</li>
+            </ul>
+          </div>
+          <div class="cons">
+            <h3>❌ Cons</h3>
+            <ul>
+              <li>Extreme Difficulty</li>
+              <li>Slow Pacing at Times</li>
+              <li>Linear Exploration</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="requirements-section">
+        <h2>Hollow Knight Silksong Requirements</h2>
+        <table>
+  <thead>
+    <tr>
+      <th>Component</th>
+      <th>Minimum</th>
+      <th>Recommended</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>CPU</td>
+      <td>Intel i5-2500k (4 core 3.3 GHz) or AMD Ryzen 3 1200 (4 core 3.1 GHz)</td>
+      <td>Intel i5-6600k (4 core 3.5 GHz) or AMD Ryzen 5 2400 G (4 core 3.6 GHz)</td>
+    </tr>
+    <tr>
+      <td>RAM</td>
+      <td>8 GB</td>
+      <td>8 GB</td>
+    </tr>
+    <tr>
+      <td>Video Card</td>
+      <td>NVIDIA GTX 960 (4 GB) or AMD R9 290X (4 GB)</td>
+      <td>NVIDIA GTX 1060 (6 GB) or AMD RX 570 (4 GB)</td>
+    </tr>
+    <tr>
+      <td>Dedicated Video RAM</td>
+      <td>4 GB</td>
+      <td>6 GB (AMD 4 GB)</td>
+    </tr>
+    <tr>
+      <td>Pixel Shader</td>
+      <td>5.1</td>
+      <td>5.1</td>
+    </tr>
+    <tr>
+      <td>Vertex Shader</td>
+      <td>5.1</td>
+      <td>5.1</td>
+    </tr>
+    <tr>
+      <td>OS</td>
+      <td>Windows 10 64-bit</td>
+      <td>Windows 10 64-bit</td>
+    </tr>
+    <tr>
+      <td>Free Disk Space</td>
+      <td>70 GB</td>
+      <td>70 GB</td>
+    </tr>
+  </tbody>
+</table>
+
+      </div>
+    </section>
+
+    <!-- Related Games Section -->
+    <section class="related-games">
+      <h2>Other Related Games</h2>
+      <div class="game-card">
+        <a href="game8.html" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/en/a/aa/SuperMeatBoy_cover.png" alt="Related Game"> 
+        </a>
+        <h3 class="blue-title">God Of War Ragnarok</h3>
+      </div>
+    </section>
+
+    <!-- Similar Games Section -->
+    <section class="similar-games">
+      <h2>Similar Games</h2>
+      <div class="game-card">
+        <a href="game9.html" target="_blank">
+          <img src="https://thf.bing.com/th/id/OIP.NKwlwujQbRxNZ2-Kzuj-SQHaHa?w=159&h=180&c=7&r=0&o=7&cb=thfc1&dpr=1.3&pid=1.7&rm=3" alt="Similar Game">
+        </a>
+        <h3 class="blue-title">Sekiro Shadows Die Twice</h3>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <<p>© 2025 PlayPortal. All Rights Reserved.</p>
+  </footer>
+  <script>
+  const trustedDomains = [
+    "steampowered.com",
+    "epicgames.com",
+    "gog.com",
+    "xbox.com",
+    "playstation.com",
+    "nintendo.com",
+    "ea.com",
+    "ubisoft.com",
+    "rockstargames.com",
+    "wikipedia.org"
+  ];
+
+  function isSafeLink(url) {
+    try {
+      const parsed = new URL(url);
+      return trustedDomains.some(domain => parsed.hostname.endsWith(domain));
+    } catch {
+      return false;
+    }
+  }
+
+  // Create Unsafe Link Popup
+  const popup = document.createElement("div");
+  popup.id = "external-link-popup";
+  popup.style.position = "fixed";
+  popup.style.top = "0";
+  popup.style.left = "0";
+  popup.style.width = "100%";
+  popup.style.height = "100%";
+  popup.style.background = "rgba(0,0,0,0.85)";
+  popup.style.display = "flex";
+  popup.style.flexDirection = "column";
+  popup.style.justifyContent = "center";
+  popup.style.alignItems = "center";
+  popup.style.color = "#f0f0f0";
+  popup.style.fontFamily = "Arial, sans-serif";
+  popup.style.fontSize = "18px";
+  popup.style.textAlign = "center";
+  popup.style.padding = "20px";
+  popup.style.zIndex = "9999";
+  popup.style.border = "2px solid #00ff88";
+  popup.style.borderRadius = "10px";
+  popup.style.display = "none"; // hidden initially
+  popup.innerHTML = `
+    <p>⚠️ You are about to leave PlayPortal and open an external link.</p>
+    <p> This link has been flagged as unsafe. It is recommended not to open this link.</p>
+    <p>Do you trust this website?</p>
+    <div style="margin-top:20px;">
+      <button id="popup-continue" style="margin-right:10px;padding:8px 15px;background:#00ff88;border:none;border-radius:5px;color:#000;cursor:pointer;">Continue</button>
+      <button id="popup-cancel" style="padding:8px 15px;background:#ff5555;border:none;border-radius:5px;color:#fff;cursor:pointer;">Cancel</button>
+    </div>
+  `;
+  document.body.appendChild(popup);
+
+  let targetHref = "";
+
+  function processLinks() {
+    const links = document.querySelectorAll("a[href]");
+
+    links.forEach(link => {
+      const href = link.getAttribute("href");
+      if (!href || !href.startsWith("http")) return;
+
+      let badge = document.createElement("span");
+      badge.style.marginLeft = "6px";
+
+      if (isSafeLink(href)) {
+        // Verified link
+        badge.textContent = "✅ Verified";
+        badge.classList.add("verified-badge");
+        badge.style.color = "#00ff88";
+        link.setAttribute("target", "_blank");
+        badge.setAttribute("title", "Official site, safe to click");
+      } else {
+        // Unsafe link
+        badge.textContent = "❌ Unsafe";
+        badge.classList.add("unsafe-badge");
+        badge.style.color = "#ff5555";
+        badge.setAttribute("title", "This link is flagged as unsafe. Click will show a warning.");
+        link.classList.add("unsafe-link");
+
+        // Add click for popup
+        link.addEventListener("click", function(e) {
+          e.preventDefault();
+          targetHref = link.href;
+          popup.style.display = "flex";
+        });
+      }
+
+      link.insertAdjacentElement("afterend", badge);
+
+      // Add copy link button
+      const copyBtn = document.createElement("button");
+      copyBtn.textContent = "📋 Copy Link";
+      copyBtn.classList.add("copy-link-btn");
+      copyBtn.style.marginLeft = "6px";
+      copyBtn.style.padding = "2px 6px";
+      copyBtn.style.fontSize = "12px";
+      copyBtn.style.borderRadius = "4px";
+      copyBtn.style.border = "none";
+      copyBtn.style.cursor = "pointer";
+      copyBtn.style.background = badge.classList.contains("verified-badge") ? "#00ff88" : "#ff5555";
+      copyBtn.style.color = badge.classList.contains("verified-badge") ? "#000" : "#fff";
+
+      copyBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        navigator.clipboard.writeText(link.href)
+          .then(() => alert(`Link copied to clipboard:\n${link.href}`))
+          .catch(() => alert("Failed to copy link."));
+      });
+
+      badge.insertAdjacentElement("afterend", copyBtn);
+    });
+
+    // Console summary
+    const verifiedCount = document.querySelectorAll(".verified-badge").length;
+    const unsafeCount = document.querySelectorAll(".unsafe-badge").length;
+    console.log(`PlayPortal Link Summary: Verified links = ${verifiedCount}, Unsafe links = ${unsafeCount}`);
+  }
+
+  // Popup button actions
+  document.getElementById("popup-continue").addEventListener("click", () => {
+    window.open(targetHref, "_blank");
+    popup.style.display = "none";
+    targetHref = "";
+  });
+
+  document.getElementById("popup-cancel").addEventListener("click", () => {
+    popup.style.display = "none";
+    targetHref = "";
+  });
+
+  // Run after DOM ready
+  window.addEventListener("DOMContentLoaded", () => {
+    processLinks();
+  });
+</script>
+</body>
+</html>

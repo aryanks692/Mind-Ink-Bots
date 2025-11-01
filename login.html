@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PlayPortal - Login</title>
+    <link rel="stylesheet" href="style1.css" />
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-form">
+            <h2>Login to PlayPortal</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <input type="email" id="email" placeholder="Enter your email" required />
+                </div>
+                <div class="form-group">
+                    <input type="password" id="password" placeholder="Enter your password" required />
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+            <div class="auth-links">
+                <p>Don't have an account? <a href="signup.html">Sign up here</a></p>
+                <a href="fgamepage.html">← Back to Home</a>
+            </div>
+            <div id="message" class="message"></div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const messageDiv = document.getElementById('message');
+
+            if (!email) {
+                messageDiv.innerHTML = '<p class="error">Email is required.</p>';
+                return;
+            }
+
+            if (!password) {
+                messageDiv.innerHTML = '<p class="error">Password is required.</p>';
+                return;
+            }
+
+            try {
+                const response = await fetch('/login', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({ email, password })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    localStorage.setItem('userEmail', email); // Store the email on successful login
+                    messageDiv.innerHTML = '<p class="success">Login successful! Redirecting...</p>';
+                    setTimeout(() => {
+                        window.location.href = 'fgamepage.html';
+                    }, 2000);
+                } else {
+                    messageDiv.innerHTML = `<p class="error">${data.error}</p>`;
+                }
+            } catch (error) {
+                messageDiv.innerHTML = '<p class="error">Network error. Please try again.</p>';
+            }
+        });
+    </script>
+</body>
+</html>

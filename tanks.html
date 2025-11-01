@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>God of War 4 - GameVerse</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #0e0e0e;
+      color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #1f1f1f;
+      padding: 15px 40px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .game-detail {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .trailer-about {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    .trailer-about iframe {
+      flex: 1 1 500px;
+      border-radius: 10px;
+    }
+
+    .about-text {
+      flex: 1 1 400px;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .ratings {
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .rating-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .rating-icon {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+    }
+
+    .score {
+      font-size: 20px;
+      color: #ffcc00;
+      font-weight: bold;
+    }
+
+    .game-purchase {
+      margin-top: 30px;
+    }
+.cta-btn {
+      background: linear-gradient(90deg, #00d4ff, #0077ff);
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+      box-shadow: 0 0 10px #00d4ff80;
+    }
+
+    .cta-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #00d4ff;
+    }
+    
+
+    .image-requirements {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-top: 60px;
+    }
+
+    .image-gallery {
+      flex: 1 1 500px;
+    }
+
+    .image-gallery img {
+      margin: 5px;
+      border-radius: 10px;
+      width: 220px;
+      height: 130px;
+      object-fit: cover;
+    }
+
+    /* Pros and Cons */
+    .pros-cons {
+      margin-top: 30px;
+      background-color: #1f1f1f;
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    .pros-cons h3 {
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    .pros h3 {
+      color: #00ff88;
+    }
+
+    .cons h3 {
+      color: #ff5555;
+    }
+
+    .pros-cons ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .pros-cons li {
+      background-color: #2a2a2a;
+      margin: 6px 0;
+      padding: 8px 10px;
+      border-radius: 5px;
+    }
+
+    .requirements-section {
+      flex: 1 1 400px;
+      background-color: #1f1f1f;
+      padding: 20px;
+      border-radius: 10px;
+      line-height: 1.8;
+    }
+
+    .requirements-section h2 {
+      color: #00d4ff;
+      text-shadow: 0 0 10px #00d4ff66;
+    }
+
+    .requirements-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    .requirements-section th, .requirements-section td {
+      border: 1px solid #2a2a2a;
+      padding: 8px 10px;
+      text-align: left;
+      background-color: #2a2a2a;
+      border-radius: 5px;
+    }
+
+    .requirements-section th {
+      color: #00d4ff;
+      text-shadow: 0 0 10px #00d4ff77;
+      margin-bottom: 10px;
+    }
+
+    /* Related / Similar Games Sections */
+    .related-games, .similar-games {
+      margin-top: 50px;
+    }
+
+    .related-games h2, .similar-games h2 {
+      color: #ffcc00;
+      margin-bottom: 20px;
+    }
+
+    .game-card {
+      flex: 1 1 200px;
+      text-align: center;
+      background-color: #1f1f1f;
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    .game-card img {
+      border-radius: 10px;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .game-card h3 {
+      margin: 10px 0 5px;
+    }
+
+    footer {
+      background-color: #1f1f1f;
+      text-align: center;
+      padding: 15px;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div>
+  <a href="fgamepage.html" class="logo">PlayPortal</a>
+</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Store</a></li>
+        <li><a href="#">Library</a></li>
+        <li><a href="#">Community</a></li>
+        <li><a href="#">Support</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="game-detail">
+    <section class="trailer-about">
+      <iframe width="800" height="450"
+        src="https://www.youtube.com/embed/Vxa5m4nS98A"
+        title="World Of Tanks"
+        frameborder="0"
+        allowfullscreen>
+      </iframe>
+      <div class="about-text">
+        <h2>About World of Tanks</h2>
+        <p>
+          World of Tanks is a team-based massively multiplayer online action game dedicated to armored warfare in the middle of the 20th century. Throw yourself into epic tank battles with other tankers all over the world.
+        </p>
+
+        <div class="ratings">
+          <div class="rating-item">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Metacritic.svg" alt="Metacritic" class="rating-icon">
+            <span class="score">94/100</span>
+          </div>
+          <div class="rating-item">
+            <img src="https://play-lh.googleusercontent.com/FC_ggvbL8insMTt6KaoYBDDgYDgoo61DIP-5iUVhCWqwl2V5vj_T7MA7Q1HoCBPzeWw=w480-h960-rw" alt="IGN" class="rating-icon">
+            <span class="score">10/10</span>
+          </div>
+          <span class="platform">(PC)</span>
+        </div>
+
+        <div class="game-purchase">
+          
+          <a href="https://worldoftanks.com/" class="cta-btn">Install Now</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="image-requirements">
+      <div class="image-gallery">
+        <h2>Images</h2>
+        <img src="https://worldoftanks.com/static/5.121.0_6a0de2/wotp_static/img/download_game/frontend/scss/img/sharing.jpg" alt="World Of Tanks Image 1">
+        <img src="https://steamcdn-a.akamaihd.net/steam/apps/444200/ss_f22f726c87ddca99f6d264f387f8aae0403b35c2.1920x1080.jpg?t=1571233562 " alt="World Of Tanks Image 2">
+        <img src="https://fs-prod-cdn.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_download_software_1/H2x1_NSwitchDS_WorldOfTanksBlitz_image1600w.jpg" alt="World Of Tanks Image 3">
+        <img src="https://cdn.akamai.steamstatic.com/steam/apps/1407200/ss_2804274de424d304fcfde492f77887132d1359c0.1920x1080.jpg?t=1614843432" alt="World of Tanks  Image 4">
+
+        <div class="pros-cons">
+          <div class="pros">
+            <h3>✅ Pros</h3>
+            <ul>
+              <li>Tactical Depth & Gameplay</li>
+              <li>Huge Variety of Vehicles & Customization</li>
+              <li>Free-to-Play Accessibility</li>
+            </ul>
+          </div>
+          <div class="cons">
+            <h3>❌ Cons</h3>
+            <ul>
+              <li>Grind Heavy, Especially at Higher Tiers</li>
+              <li>Pay-to-Win / Monetization Issues</li>
+              <li>Repetitiveness / Lack of Narrativ</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="requirements-section">
+        <h2>World Of Tanks  Requirements</h2>
+       <table>
+  <tr>
+    <th>Component</th>
+    <th>Minimum</th>
+    <th>Recommended</th>
+  </tr>
+  <tr>
+    <td>CPU</td>
+    <td>Intel Core i5-3330 / AMD FX-6300</td>
+    <td>Intel Core i3-9100F / AMD Ryzen 3 3100</td>
+  </tr>
+  <tr>
+    <td>RAM</td>
+    <td>4 GB</td>
+    <td>16 GB</td>
+  </tr>
+  <tr>
+    <td>Video Card</td>
+    <td>NVIDIA GeForce GTX 460 / AMD Radeon HD 8770 (1280×768)</td>
+    <td>NVIDIA GTX 1650 / AMD Radeon RX 580</td>
+  </tr>
+  <tr>
+    <td>Dedicated Video RAM</td>
+    <td>~1 GB</td>
+    <td>~4 GB</td>
+  </tr>
+  <tr>
+    <td>Pixel Shader</td>
+    <td>5.0</td>
+    <td>6.0</td>
+  </tr>
+  <tr>
+    <td>Vertex Shader</td>
+    <td>5.0</td>
+    <td>6.0</td>
+  </tr>
+  <tr>
+    <td>OS</td>
+    <td>Windows 7 / 8 / 8.1 / 10 / 11 (64-bit)</td>
+    <td>Windows 10 / 11 (64-bit)</td>
+  </tr>
+  <tr>
+    <td>Free Disk Space</td>
+    <td>70 GB</td>
+    <td>70 GB</td>
+  </tr>
+</table>
+      </div>
+    </section>
+   <section class="related-games">
+      <h2>Other Related Games</h2>
+      <div class="game-card">
+        <a href="game6.html" target="_blank">
+          <img src="https://tse3.mm.bing.net/th/id/OIP.SgsnJ0C3QZIYeLjyIzt08QAAAA?r=0&cb=thfc1&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Related Game"> 
+        </a>
+        <h3 class="blue-title">Hollow Knight Silksong</h3>
+      </div>
+    </section>
+
+    <!-- Similar Games Section -->
+    <section class="similar-games">
+      <h2>Similar Games</h2>
+      <div class="game-card">
+        <a href="game9.html" target="_blank">
+          <img src="https://thf.bing.com/th/id/OIP.NKwlwujQbRxNZ2-Kzuj-SQHaHa?w=159&h=180&c=7&r=0&o=7&cb=thfc1&dpr=1.3&pid=1.7&rm=3" alt="Similar Game">
+        </a>
+        <h3 class="blue-title">Cup Head</h3>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 GameVerse. All Rights Reserved.</p>
+  </footer>
+  
+  <script>
+  const trustedDomains = [
+    "steampowered.com",
+    "epicgames.com",
+    "gog.com",
+    "xbox.com",
+    "playstation.com",
+    "nintendo.com",
+    "ea.com",
+    "ubisoft.com",
+    "rockstargames.com",
+    "wikipedia.org"
+  ];
+
+  function isSafeLink(url) {
+    try {
+      const parsed = new URL(url);
+      return trustedDomains.some(domain => parsed.hostname.endsWith(domain));
+    } catch {
+      return false;
+    }
+  }
+
+  // Create Unsafe Link Popup
+  const popup = document.createElement("div");
+  popup.id = "external-link-popup";
+  popup.style.position = "fixed";
+  popup.style.top = "0";
+  popup.style.left = "0";
+  popup.style.width = "100%";
+  popup.style.height = "100%";
+  popup.style.background = "rgba(0,0,0,0.85)";
+  popup.style.display = "flex";
+  popup.style.flexDirection = "column";
+  popup.style.justifyContent = "center";
+  popup.style.alignItems = "center";
+  popup.style.color = "#f0f0f0";
+  popup.style.fontFamily = "Arial, sans-serif";
+  popup.style.fontSize = "18px";
+  popup.style.textAlign = "center";
+  popup.style.padding = "20px";
+  popup.style.zIndex = "9999";
+  popup.style.border = "2px solid #00ff88";
+  popup.style.borderRadius = "10px";
+  popup.style.display = "none"; // hidden initially
+  popup.innerHTML = `
+    <p>⚠️ You are about to leave PlayPortal and open an external link.</p>
+    <p> This link has been flagged as unsafe. It is recommended not to open this link.</p>
+    <p>Do you trust this website?</p>
+    <div style="margin-top:20px;">
+      <button id="popup-continue" style="margin-right:10px;padding:8px 15px;background:#00ff88;border:none;border-radius:5px;color:#000;cursor:pointer;">Continue</button>
+      <button id="popup-cancel" style="padding:8px 15px;background:#ff5555;border:none;border-radius:5px;color:#fff;cursor:pointer;">Cancel</button>
+    </div>
+  `;
+  document.body.appendChild(popup);
+
+  let targetHref = "";
+
+  function processLinks() {
+    const links = document.querySelectorAll("a[href]");
+
+    links.forEach(link => {
+      const href = link.getAttribute("href");
+      if (!href || !href.startsWith("http")) return;
+
+      let badge = document.createElement("span");
+      badge.style.marginLeft = "6px";
+
+      if (isSafeLink(href)) {
+        // Verified link
+        badge.textContent = "✅ Verified";
+        badge.classList.add("verified-badge");
+        badge.style.color = "#00ff88";
+        link.setAttribute("target", "_blank");
+        badge.setAttribute("title", "Official site, safe to click");
+      } else {
+        // Unsafe link
+        badge.textContent = "❌ Unsafe";
+        badge.classList.add("unsafe-badge");
+        badge.style.color = "#ff5555";
+        badge.setAttribute("title", "This link is flagged as unsafe. Click will show a warning.");
+        link.classList.add("unsafe-link");
+
+        // Add click for popup
+        link.addEventListener("click", function(e) {
+          e.preventDefault();
+          targetHref = link.href;
+          popup.style.display = "flex";
+        });
+      }
+
+      link.insertAdjacentElement("afterend", badge);
+
+      // Add copy link button
+      const copyBtn = document.createElement("button");
+      copyBtn.textContent = "📋 Copy Link";
+      copyBtn.classList.add("copy-link-btn");
+      copyBtn.style.marginLeft = "6px";
+      copyBtn.style.padding = "2px 6px";
+      copyBtn.style.fontSize = "12px";
+      copyBtn.style.borderRadius = "4px";
+      copyBtn.style.border = "none";
+      copyBtn.style.cursor = "pointer";
+      copyBtn.style.background = badge.classList.contains("verified-badge") ? "#00ff88" : "#ff5555";
+      copyBtn.style.color = badge.classList.contains("verified-badge") ? "#000" : "#fff";
+
+      copyBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        navigator.clipboard.writeText(link.href)
+          .then(() => alert(`Link copied to clipboard:\n${link.href}`))
+          .catch(() => alert("Failed to copy link."));
+      });
+
+      badge.insertAdjacentElement("afterend", copyBtn);
+    });
+
+    // Console summary
+    const verifiedCount = document.querySelectorAll(".verified-badge").length;
+    const unsafeCount = document.querySelectorAll(".unsafe-badge").length;
+    console.log(`PlayPortal Link Summary: Verified links = ${verifiedCount}, Unsafe links = ${unsafeCount}`);
+  }
+
+  // Popup button actions
+  document.getElementById("popup-continue").addEventListener("click", () => {
+    window.open(targetHref, "_blank");
+    popup.style.display = "none";
+    targetHref = "";
+  });
+
+  document.getElementById("popup-cancel").addEventListener("click", () => {
+    popup.style.display = "none";
+    targetHref = "";
+  });
+
+  // Run after DOM ready
+  window.addEventListener("DOMContentLoaded", () => {
+    processLinks();
+  });
+</script>
+
+
+</body>
+</html>

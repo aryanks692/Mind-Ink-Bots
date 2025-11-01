@@ -1,0 +1,188 @@
+/* -------------------- Reset & Basics -------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(-45deg, #667eea, #764ba2, #6a11cb, #2575fc);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    overflow: hidden;
+}
+
+/* -------------------- Animated Gradient -------------------- */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* -------------------- Containers -------------------- */
+.welcome-container,
+.auth-container,
+.dashboard-container {
+    background: rgba(0,0,0,0.85);
+    color: #f0f0f0;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    max-width: 320px;
+    width: 90%;
+    backdrop-filter: blur(10px);
+    animation: floatUp 2s ease infinite alternate;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(-10px); }
+}
+
+/* -------------------- Headings -------------------- */
+.welcome-container h1,
+.dashboard-container h1 {
+    color: #ffcc00;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.auth-form h2 {
+    color: #ffcc00;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+/* -------------------- Form Inputs -------------------- */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #555;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input::placeholder {
+    color: #ccc;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #ffcc00;
+    box-shadow: 0 0 10px #ffcc00aa;
+}
+
+/* -------------------- Buttons -------------------- */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    margin: 0.5rem 0;
+    text-decoration: none;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    width: 100%;
+    font-weight: bold;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.6);
+}
+
+.btn-secondary {
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+    border: 2px solid #777;
+}
+
+.btn-secondary:hover {
+    background: rgba(255,255,255,0.2);
+    border-color: #ffcc00;
+}
+
+.btn-guest {
+    background: #28a745;
+    color: white;
+    box-shadow: 0 0 8px #28a74550;
+}
+
+.btn-guest:hover {
+    background: #218838;
+    box-shadow: 0 0 15px #28a745aa;
+}
+
+/* -------------------- Links -------------------- */
+.auth-links {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.auth-links a {
+    color: #ffcc00;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.auth-links a:hover {
+    text-decoration: underline;
+    color: #fff176;
+}
+
+/* -------------------- Guest Section -------------------- */
+.guest-access {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #555;
+}
+
+/* -------------------- Messages -------------------- */
+.message {
+    margin-top: 1rem;
+}
+
+.success {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.error {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+/* -------------------- Responsive -------------------- */
+@media (max-width: 480px) {
+    .welcome-container,
+    .auth-container,
+    .dashboard-container {
+        margin: 1rem;
+        padding: 1.2rem;
+    }
+    
+    .btn {
+        width: 100%;
+        margin: 0.25rem 0;
+    }
+}
